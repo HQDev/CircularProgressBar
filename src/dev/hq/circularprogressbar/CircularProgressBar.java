@@ -56,7 +56,7 @@ public class CircularProgressBar extends View {
 	    	setTextColor(typedArray.getColor(R.styleable.CircularProgressBar_textColor,0xffff8201));
 	    	setTextSize(typedArray.getDimension(R.styleable.CircularProgressBar_textSize,60f));
 	    	setProgress(typedArray.getInteger(R.styleable.CircularProgressBar_progress,0));
-	    	setCompleted(typedArray.getInteger(R.styleable.CircularProgressBar_completed,10000));
+	    	setCompleted(typedArray.getInteger(R.styleable.CircularProgressBar_completed,1000));
 	    	setTextVisibility(typedArray.getBoolean(R.styleable.CircularProgressBar_textVisibility,true));
 	    }
 	    
@@ -86,8 +86,8 @@ public class CircularProgressBar extends View {
 		paint.setTypeface(Typeface.DEFAULT_BOLD);
 				
 		if (textVisibility) {
-			float textWidth = paint.measureText(progress + "Steps");   
-			canvas.drawText(progress + "Steps",center - textWidth / 2,center + textSize/2,paint);
+			float textWidth = paint.measureText(progress + "");   
+			canvas.drawText(progress + "",center - textWidth / 2,center + textSize/2,paint);
 		}
 		
 	}
