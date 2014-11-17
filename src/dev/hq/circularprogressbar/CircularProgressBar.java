@@ -51,13 +51,13 @@ public class CircularProgressBar extends View {
 	    
 	    if (typedArray != null) {
 	    	setBaseColor(typedArray.getColor(R.styleable.CircularProgressBar_baseColor,0xffe8e8e7));
-			setForegroundColor(typedArray.getColor(R.styleable.CircularProgressBar_foregroundColor,Color.GREEN));
-			setCircleWidth(typedArray.getDimension(R.styleable.CircularProgressBar_circleWidth,60f));
-			setTextColor(typedArray.getColor(R.styleable.CircularProgressBar_textColor,0xffff8201));
-			setTextSize(typedArray.getDimension(R.styleable.CircularProgressBar_textSize,60f));
-			setProgress(typedArray.getInteger(R.styleable.CircularProgressBar_progress,0));
-			setCompleted(typedArray.getInteger(R.styleable.CircularProgressBar_completed,10000));
-			setTextVisibility(typedArray.getBoolean(R.styleable.CircularProgressBar_textVisibility,true));
+	    	setForegroundColor(typedArray.getColor(R.styleable.CircularProgressBar_foregroundColor,Color.GREEN));
+	    	setCircleWidth(typedArray.getDimension(R.styleable.CircularProgressBar_circleWidth,60f));
+	    	setTextColor(typedArray.getColor(R.styleable.CircularProgressBar_textColor,0xffff8201));
+	    	setTextSize(typedArray.getDimension(R.styleable.CircularProgressBar_textSize,60f));
+	    	setProgress(typedArray.getInteger(R.styleable.CircularProgressBar_progress,0));
+	    	setCompleted(typedArray.getInteger(R.styleable.CircularProgressBar_completed,10000));
+	    	setTextVisibility(typedArray.getBoolean(R.styleable.CircularProgressBar_textVisibility,true));
 	    }
 	    
 	    typedArray.recycle();
@@ -69,15 +69,15 @@ public class CircularProgressBar extends View {
 		super.onDraw(canvas);
 		
 		int center = getWidth()/2;
-		int radius = (int)(center - circleWidth/2);		paint.setColor(baseColor);
-		paint.setStyle(Paint.Style.STROKE); 		paint.setStrokeWidth(circleWidth);		paint.setAntiAlias(true); 		oval.set(center - radius,center - radius,center + radius,center + radius);
-		
+		int radius = (int)(center - circleWidth/2);
+		paint.setColor(baseColor);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(circleWidth);
+		paint.setAntiAlias(true);
+		oval.set(center - radius,center - radius,center + radius,center + radius);
 		canvas.drawArc(oval,270,360,false,paint);
 				
-		paint.setStrokeWidth(circleWidth);
 		paint.setColor(foregroundColor); 
-		
-		paint.setStyle(Paint.Style.STROKE);
 		canvas.drawArc(oval,270,360 * progress / completed,false,paint); 
 
 		paint.setStrokeWidth(0);
@@ -86,13 +86,12 @@ public class CircularProgressBar extends View {
 		paint.setTypeface(Typeface.DEFAULT_BOLD);
 				
 		if (textVisibility) {
-			float textWidth = paint.measureText(progress + "²½");   
-			canvas.drawText(progress + "²½",center - textWidth / 2,center - textSize/2,paint);
+			float textWidth = paint.measureText(progress + "Â²Â½");   
+			canvas.drawText(progress + "Â²Â½",center - textWidth / 2,center - textSize/2,paint);
 			
-			textWidth = paint.measureText(progress/20 + "´ó¿¨");
-			canvas.drawText(progress/20 + "Ç§¿¨",center - textWidth / 2,center + textSize*3/2,paint);
+			textWidth = paint.measureText(progress/20 + "Â´Ã³Â¿Â¨");
+			canvas.drawText(progress/20 + "Ã‡Â§Â¿Â¨",center - textWidth / 2,center + textSize*3/2,paint);
 		}
-		
 		
 	}
 	
