@@ -86,11 +86,11 @@ public class CircularProgressBar extends View {
 		paint.setTypeface(Typeface.DEFAULT_BOLD);
 				
 		if (textVisibility) {
-			float textWidth = paint.measureText(progress + "²½");   
-			canvas.drawText(progress + "²½",center - textWidth / 2,center - textSize/2,paint);
+			float textWidth = paint.measureText(progress + "Steps");   
+			canvas.drawText(progress + "Steps",center - textWidth / 2,center - textSize/2,paint);
 			
-			textWidth = paint.measureText(progress/20 + "´ó¿¨");
-			canvas.drawText(progress/20 + "Ç§¿¨",center - textWidth / 2,center + textSize*3/2,paint);
+			textWidth = paint.measureText(progress/20 + "Cal");
+			canvas.drawText(progress/20 + "Cal",center - textWidth / 2,center + textSize*3/2,paint);
 		}
 		
 	}
