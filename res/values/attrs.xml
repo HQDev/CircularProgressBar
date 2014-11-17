@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="CircularProgressBar">
+        <attr name="baseColor" format="color" />
+        <attr name="foregroundColor" format="color" />
+        <attr name="circleWidth" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="progress" format="integer" />
+        <attr name="completed" format="integer" />
+        <attr name="textVisibility" format="boolean" />
+    </declare-styleable>
+
+</resources>
